@@ -24,6 +24,7 @@ options = {
   odom_frame = "odom",
   provide_odom_frame = false,
   use_odometry = true,
+  use_nav_sat = false,
   num_laser_scans = 1,
   num_multi_echo_laser_scans = 0,
   num_subdivisions_per_laser_scan = 1,
@@ -34,6 +35,7 @@ options = {
   trajectory_publish_period_sec = 30e-3,
   rangefinder_sampling_ratio = 1.,
   odometry_sampling_ratio = 1.,
+  fixed_frame_pose_sampling_ratio = 1.,
   imu_sampling_ratio = 1.,
 }
 
@@ -51,8 +53,8 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.rotation_weight = 300
 
 TRAJECTORY_BUILDER_2D.submaps.resolution = 0.035
 TRAJECTORY_BUILDER_2D.submaps.num_range_data = 120
-SPARSE_POSE_GRAPH.optimize_every_n_scans = 120
-SPARSE_POSE_GRAPH.constraint_builder.min_score = 0.82
-SPARSE_POSE_GRAPH.constraint_builder.sampling_ratio = 1.
+POSE_GRAPH.optimize_every_n_nodes = 120
+POSE_GRAPH.constraint_builder.min_score = 0.82
+POSE_GRAPH.constraint_builder.sampling_ratio = 1.
 
 return options
