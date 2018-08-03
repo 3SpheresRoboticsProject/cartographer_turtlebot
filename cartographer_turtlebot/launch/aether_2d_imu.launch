@@ -26,7 +26,9 @@
 
   <node name="flat_world_imu_node" pkg="cartographer_turtlebot"
       type="cartographer_flat_world_imu_node" output="screen">
-    <remap from="imu_in" to="/mobile_base/sensors/imu_data_raw" />
+    <!--<remap from="imu_in" to="/mobile_base/sensors/imu_data_raw" /> 
+    <remap from="imu_in" to="/imu_raw_time_filtered" />-->
+    <remap from="imu_in" to="/mobile_base/sensors/imu_data" /> 
     <remap from="imu_out" to="/imu" />
   </node>
 
