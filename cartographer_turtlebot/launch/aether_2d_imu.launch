@@ -15,7 +15,7 @@
 -->
 <!-- $(find cartographer_turtlebot)/configuration_files -->
 <launch>
-<arg name="cartographer_config_path" default="/home/jdqadmin/cartographer_ws/install_isolated/share/cartographer_turtlebot/configuration_files"/>
+<arg name="cartographer_config_path" default="$(find cartographer_turtlebot)/configuration_files"/>
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(arg cartographer_config_path) 
