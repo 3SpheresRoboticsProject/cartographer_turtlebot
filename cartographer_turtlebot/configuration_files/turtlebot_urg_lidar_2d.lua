@@ -26,7 +26,7 @@ options = {
   publish_frame_projected_to_2d = false,
   use_odometry = true,
   use_nav_sat = false,
-  use_landmarks = false,
+  use_landmarks = true,
   num_laser_scans = 1,
   num_multi_echo_laser_scans = 0,
   num_subdivisions_per_laser_scan = 1,
@@ -43,6 +43,7 @@ options = {
 }
 
 MAP_BUILDER.use_trajectory_builder_2d = true
+TRAJECTORY_BUILDER.collate_landmarks = false  -- if landmarks are used, set this to false, landmarks are in 3D
 
 TRAJECTORY_BUILDER_2D.min_range = 0.1
 TRAJECTORY_BUILDER_2D.max_range = 8.
