@@ -45,14 +45,19 @@ options = {
 MAP_BUILDER.use_trajectory_builder_2d = true
 TRAJECTORY_BUILDER.collate_landmarks = false  -- if landmarks are used, set this to false, landmarks are in 3D
 
-TRAJECTORY_BUILDER_2D.min_range = 0.1
-TRAJECTORY_BUILDER_2D.max_range = 8.
-TRAJECTORY_BUILDER_2D.missing_data_ray_length = 5.
+TRAJECTORY_BUILDER_2D.min_range = 0.15  --was .1
+TRAJECTORY_BUILDER_2D.max_range = 3.  --was 8.
+TRAJECTORY_BUILDER_2D.missing_data_ray_length = 1.  -- was 5.
 TRAJECTORY_BUILDER_2D.use_imu_data = true   -- setting this to true would tilt the robot with respect to the map
 TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
 TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.1)
 
 POSE_GRAPH.constraint_builder.min_score = 0.65
 POSE_GRAPH.constraint_builder.global_localization_min_score = 0.7
+POSE_GRAPH.overlapping_submaps_trimmer_2d = {
+  fresh_submaps_count = 1,
+  min_covered_area = 2,
+  min_added_submaps_count = 5,
+}
 
 return options
